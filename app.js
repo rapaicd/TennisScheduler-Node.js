@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const timeslotRoutes = require('./routes/timeslotRoutes')
 const userRoutes = require('./routes/userRoutes')
 const tennisCourtRoutes = require('./routes/tennisCourtRoutes')
@@ -6,6 +7,7 @@ const AppError = require('./utils/appError')
 const globalErrorHandler = require('./controllers/errorController')
 
 const app = express();
+app.use(cors())
 
 app.use(express.json())
 app.use('/users',userRoutes)
